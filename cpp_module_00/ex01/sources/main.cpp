@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anemesis <anemesis@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/09/19 12:48:00 by anemesis          #+#    #+#             */
-/*   Updated: 2022/09/20 22:17:22 by anemesis         ###   ########.fr       */
+/*   Created: 2022/09/19 12:55:43 by anemesis          #+#    #+#             */
+/*   Updated: 2022/09/20 22:16:02 by anemesis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#pragma once
+#include "../headers/PhoneBook.hpp"
 
-#include "Contact.hpp"
-#include <stdio.h>
-
-class PhoneBook {
-private:
-	Contact contacts[8];
-	int oldest;
-	std::string cropField(std::string field);
-	
-public:
-	PhoneBook();
-	~PhoneBook();
-	void add();
-	void search();
-};
+int main(void) {
+	PhoneBook myPhoneBook = PhoneBook();
+	std::string command;
+	while (!std::cin.eof()) {
+		std::cout << "Please, insert command" << std::endl;
+		std::cin >> command;
+		if(command == "ADD") {
+			myPhoneBook.add();
+		} else if (command == "SEARCH") {
+			myPhoneBook.search();
+		} else if (command == "EXIT") {
+			return (0);
+		}
+	}
+	return (0);
+}

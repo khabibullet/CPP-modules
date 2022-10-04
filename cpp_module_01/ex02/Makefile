@@ -6,7 +6,7 @@
 #    By: anemesis <anemesis@student.21-school.ru>   +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/18 17:52:29 by anemesis          #+#    #+#              #
-#    Updated: 2022/10/03 19:27:13 by anemesis         ###   ########.fr        #
+#    Updated: 2022/10/04 16:09:49 by anemesis         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ FLAGS		=	-std=c++98 -Wall -Wextra -Werror
 all : $(NAME)
 
 $(NAME) : $(OBJ)
-	$(CC) $(FLAGS)$^ -o $@
+	$(CC) $(FLAGS) $^ -o $@
 
 $(OBJDIR)/%.o : $(SRCDIR)/%.cpp
 	mkdir -p $(OBJDIR)

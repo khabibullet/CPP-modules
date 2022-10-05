@@ -6,7 +6,7 @@
 /*   By: anemesis <anemesis@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 19:40:04 by anemesis          #+#    #+#             */
-/*   Updated: 2022/10/04 23:35:18 by anemesis         ###   ########.fr       */
+/*   Updated: 2022/10/05 14:53:34 by anemesis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,22 +30,20 @@ int main(int argc, char **argv)
 		return (1);
 	}
 	
-	std::string inputFileText;
+	std::string inputFileLine;
 	std::ofstream outfile(oldFileName + ".replaced");
 	if(!outfile){
 		std::cout << "Cannot write to file!" << std::endl;
 		return (1);
 	}
 	
-	while (std::getline(infile, inputFileText)) {
-		if(inputFileText.find(oldStr) != std::string::npos) {
-			int findPos = inputFileText.find(oldStr);
-			inputFileText.erase(findPos, oldStr.length());
-			inputFileText.insert(findPos, newStr);
-			outfile << inputFileText << std::endl;
-		} else {
-			outfile << inputFileText << std::endl;
+	while (std::getline(infile, inputFileLine)) {
+		size_t pos = 0;
+		while ((pos = inputFileLine.find(oldStr, pos)) != std::string::npos) {
+			inputFileLine.erase(pos, oldStr.length());
+			inputFileLine.insert(pos, newStr);
 		}
+		outfile << inputFileLine << std::endl;
 	}
 	outfile.close();
 	infile.close();

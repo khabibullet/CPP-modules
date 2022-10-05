@@ -6,7 +6,7 @@
 /*   By: anemesis <anemesis@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 12:53:22 by anemesis          #+#    #+#             */
-/*   Updated: 2022/10/03 19:36:25 by anemesis         ###   ########.fr       */
+/*   Updated: 2022/10/05 17:43:02 by anemesis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ Zombie* Zombie::zombieHorde(int N, std::string name) {
 		zombies[i].name = name;
 	}
 	
-	return (&zombies[0]);
+	return (zombies);
 }

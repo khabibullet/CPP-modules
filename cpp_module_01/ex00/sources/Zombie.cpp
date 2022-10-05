@@ -6,11 +6,10 @@
 /*   By: anemesis <anemesis@student.21-school.ru>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/19 15:58:47 by anemesis          #+#    #+#             */
-/*   Updated: 2022/10/03 17:29:42 by anemesis         ###   ########.fr       */
+/*   Updated: 2022/10/05 15:56:48 by anemesis         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
 #include "../headers/Zombie.hpp"
 
 Zombie::Zombie(std::string name) {
